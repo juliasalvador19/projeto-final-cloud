@@ -21,7 +21,7 @@ resource "aws_instance" "app_server" {
   user_data = <<-EOF
               #!/bin/bash
               cd /home/ubuntu
-              echo "<h1>Feito com Terraform</h1>"
+              echo "<h1>Feito com Terraform</h1>" > index.html
               nohup busybox httpd -f -p 8080 &
               EOF
   tags = {
